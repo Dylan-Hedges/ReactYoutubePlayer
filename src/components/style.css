@@ -1,0 +1,36 @@
+.searchbar {
+  margin: 10px 0 10px 0;
+  text-align: left;
+}
+
+.searchbar input {
+  width: 100%;
+}
+
+.videoitem img {
+  max-width: 64px;
+}
+
+.mainVideoStyle {
+  margin: 10px 0 10px 0;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+
+.mainVideoDescription {
+  padding: 10px 0 10px 0;
+}
+
+.mainVideoTitle {
+  padding: 10px 0 10px 0;
+  font-weight:bold;
+}
+
+.listgroupitem {
+  cursor: pointer;
+}
+
+.listgroupitem:hover {
+  background-color: #eee;
+}
