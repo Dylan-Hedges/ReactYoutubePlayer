@@ -1,5 +1,4 @@
 .searchbar {
-  margin: 10px 0 10px 0;
   text-align: left;
 }
 
@@ -27,10 +26,20 @@
   font-weight:bold;
 }
 
-.listgroupitem {
-  cursor: pointer;
+.liststyle {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-.listgroupitem:hover {
+
+.listitemstyle {
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 5px;
+
+}
+
+.listitemstyle:hover {
   background-color: #eee;
 }
