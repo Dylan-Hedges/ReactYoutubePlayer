@@ -14,7 +14,7 @@ const VideoList = (props) => {
     });
     //Returns a <ul> with each video being a seperate <li>
     return (
-      <div className="col-md-12">
+      <div className="col-md-6">
         <ul className={classes.liststyle}>
             {videoItems}
         </ul>

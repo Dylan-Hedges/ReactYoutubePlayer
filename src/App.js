@@ -2,10 +2,11 @@ import _ from 'lodash';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
-import SearchBar from './components/search_bar';
+import SearchBar from './containers/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
 import keys from './keys/keys';
+import classes from './style/style.css';
 
 //Youtube API key
 const API_KEY = `${keys.youtubeKey}`;
@@ -39,11 +40,11 @@ class App extends Component {
          const videoSearch = _.debounce((term) => {this.videoSearch(term) },300);
          return(
              <div className="container">
-                 <SearchBar onSearchTermChange={videoSearch}/>
-                 <VideoDetail video={this.state.selectedVideo}/>
-                 <VideoList
-                     onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-                     videos={this.state.videos} />
+               <SearchBar onSearchTermChange={videoSearch}/>
+               <VideoDetail video={this.state.selectedVideo}/>
+               <VideoList
+                  onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+                  videos={this.state.videos} />
              </div>
          );
      }
