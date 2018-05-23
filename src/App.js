@@ -39,12 +39,14 @@ class App extends Component {
          //Slows down/throttles user searches (makes results return smoother) - Creates a new debounched version of the search function that can be called only once every 300 milliseconds
          const videoSearch = _.debounce((term) => {this.videoSearch(term) },300);
          return(
-             <div className="container">
+            <div className="container">
                <SearchBar onSearchTermChange={videoSearch}/>
-               <VideoDetail video={this.state.selectedVideo}/>
-               <VideoList
-                  onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-                  videos={this.state.videos} />
+               <div className = {classes.mainAndSideList}>
+                 <VideoDetail video={this.state.selectedVideo}/>
+                 <VideoList
+                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+                    videos={this.state.videos} />
+               </div>
              </div>
          );
      }

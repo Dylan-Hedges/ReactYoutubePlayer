@@ -13,7 +13,6 @@ const VideoDetail = ({video}) => {
     const url = `https://www.youtube.com/embed/${videoId}` ;
     //Renders main video's picture, title and description
     return(
-      <div className="col-md-6">
         <div className={classes.mainVideoStyle}>
             <div className ="embed-responsive embed-responsive-16by9">
                 <iframe className="embed-responsive-item" src={url}></iframe>
@@ -23,7 +22,6 @@ const VideoDetail = ({video}) => {
                 <div>{video.snippet.description}</div>
             </div>
           </div>
-        </div>
     );
 };
 
