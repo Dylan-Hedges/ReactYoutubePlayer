@@ -12,11 +12,20 @@ const VideoList = (props) => {
                 video={video} />
         );
     });
+
     //Returns a <ul> with each video being a seperate <li>
     return (
-        <ul className={classes.liststyle}>
+      <div>
+        { (props.sideList === true) ?
+          <ul className={classes.sideListStyle}>
             {videoItems}
-        </ul>
+          </ul>
+          :
+          <ul className={classes.liststyle}>
+            {videoItems}
+          </ul>
+        }
+      </div>
     );
 }
 

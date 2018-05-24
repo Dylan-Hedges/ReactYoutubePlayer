@@ -1,5 +1,4 @@
-
-
+/*------STYLING FOR MAIN VIDEO--------------*/
 .videoitem img {
   max-width: 64px;
 }
@@ -19,19 +18,36 @@
   padding: 10px 0 10px 0;
   font-weight:bold;
 }
+/*------STYLING FOR SIDE VIDEOS--------------*/
+.sideListStyle {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid red;
+  border-radius: 4px;
+}
 
+.sideListItemStyle {
+  cursor: pointer;
+  display: block;
+}
+
+.sideListItemStyle:hover {
+  background-color: #eee;
+}
+
+/* ------STYLING FOR LIST OF VIDEOS--------------*/
 .liststyle {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  border: 1px solid #000;
+  border: 1px solid black;
   border-radius: 4px;
 }
 
-
 .listitemstyle {
   cursor: pointer;
-  display: block;
+  display: inline-block;
 }
 
 .listitemstyle:hover {
