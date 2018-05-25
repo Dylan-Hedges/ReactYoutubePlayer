@@ -1,31 +1,45 @@
 import React from 'react';
 import VideoListItem from './video_list_item';
 import classes from './style.css';
+import Aux from '../hoc/Aux_file.js';
 
 //Renders the list of reccomended videos
 const VideoList = (props) => {
     const videoItems = props.videos.map((video) => {
         return (
-            <VideoListItem
-                onVideoSelect={props.onVideoSelect}
-                key={video.etag}
-                video={video} />
+          <Aux>
+            { (props.sideList === true) ?
+                <VideoListItem
+                    onVideoSelect={props.onVideoSelect}
+                    key={video.etag}
+                    video={video}
+                    sideList={true}
+                />
+               :
+               <VideoListItem
+                   onVideoSelect={props.onVideoSelect}
+                   key={video.etag}
+                   video={video}
+                   sideList={false}
+               />
+            }
+          </Aux>
         );
     });
 
     //Returns a <ul> with each video being a seperate <li>
     return (
-      <div className="col-md-4">
+      <Aux>
         { (props.sideList === true) ?
-          <ul className={classes.sideListStyle}>
-            {videoItems}
-          </ul>
+            <ul className={classes.sideListStyle}>
+              {videoItems}
+            </ul>
           :
-          <ul className={classes.liststyle}>
-            {videoItems}
-          </ul>
+            <ul className={classes.listStyle}>
+              {videoItems}
+            </ul>
         }
-      </div>
+      </Aux>
     );
 }
 

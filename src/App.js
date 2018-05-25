@@ -6,7 +6,8 @@ import SearchBar from './containers/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
 import keys from './keys/keys';
-import classes from './style/style.css';
+import classes from './style.css';
+import Aux from './hoc/Aux_file.js';
 
 //Youtube API key
 const API_KEY = `${keys.youtubeKey}`;
@@ -42,10 +43,15 @@ class App extends Component {
             <div className="container">
                <SearchBar onSearchTermChange={videoSearch}/>
                <div className = {classes.mainAndSideList}>
-                 <VideoDetail video={this.state.selectedVideo}/>
-                 <VideoList
+                  <VideoDetail video={this.state.selectedVideo}/>
+                  <VideoList
                     onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                     videos={this.state.videos} sideList={true}/>
+               </div>
+               <div>
+                 <VideoList
+                   onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+                   videos={this.state.videos} sideList={false}/>
                </div>
              </div>
          );

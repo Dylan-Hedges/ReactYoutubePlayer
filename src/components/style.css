@@ -25,15 +25,13 @@
   border-radius: 4px;
 }
 
-.sideListItemStyle {
-  display: block;
+.sideListVideoStyle {
   cursor: pointer;
-  padding: 10px;
   font-weight: bold;
 }
 
-.sideListItemStyle:hover {
-  background-color: #eee;
+.sideListVideoStyle: hover {
+  background-color: green;
 }
 
 /* ------STYLING FOR LIST OF VIDEOS--------------*/
@@ -41,15 +39,15 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
-  border: 1px solid black;
+  border: 1px solid green;
   border-radius: 4px;
 }
 
-.lisIitemStyle {
+.listVideoStyle {
   cursor: pointer;
-  display: inline-block;
+  display: inline;
 }
 
-.listItemStyle:hover {
-  background-color: #eee;
+.listVideoStyle: hover {
+  background-color: green;
 }
