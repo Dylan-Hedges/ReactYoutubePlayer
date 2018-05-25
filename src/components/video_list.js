@@ -15,7 +15,7 @@ const VideoList = (props) => {
 
     //Returns a <ul> with each video being a seperate <li>
     return (
-      <div>
+      <div className="col-md-4">
         { (props.sideList === true) ?
           <ul className={classes.sideListStyle}>
             {videoItems}

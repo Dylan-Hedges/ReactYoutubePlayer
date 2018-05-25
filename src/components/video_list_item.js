@@ -7,17 +7,13 @@ const VideoListItem = ({video, onVideoSelect}) => {
     const imageUrl = video.snippet.thumbnails.default.url;
     //Renders reccomended videos picture, title and description
     return (
-        <li onClick={() => onVideoSelect(video)} className={classes.listitemstyle}>
+        <li onClick={() => onVideoSelect(video)} className={classes.sideListItemStyle}>
           <div>
             <img src={imageUrl}/>
+            {video.snippet.title}
           </div>
-
         </li>
     );
 };
 
 export default VideoListItem;
-
-// <div>
-//     <div>{video.snippet.title}</div>
-// </div>

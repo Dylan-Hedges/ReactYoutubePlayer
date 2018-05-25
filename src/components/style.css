@@ -4,8 +4,6 @@
 }
 
 .mainVideoStyle {
-  margin: 10px 0 10px 0;
-  padding: 10px;
   border: 1px solid #000;
   border-radius: 4px;
 }
@@ -28,8 +26,10 @@
 }
 
 .sideListItemStyle {
-  cursor: pointer;
   display: block;
+  cursor: pointer;
+  padding: 10px;
+  font-weight: bold;
 }
 
 .sideListItemStyle:hover {
@@ -37,7 +37,7 @@
 }
 
 /* ------STYLING FOR LIST OF VIDEOS--------------*/
-.liststyle {
+.listStyle {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -45,11 +45,11 @@
   border-radius: 4px;
 }
 
-.listitemstyle {
+.lisIitemStyle {
   cursor: pointer;
   display: inline-block;
 }
 
-.listitemstyle:hover {
+.listItemStyle:hover {
   background-color: #eee;
 }
