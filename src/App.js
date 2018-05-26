@@ -22,7 +22,10 @@ class App extends Component {
              selectedVideo: null
          };
          //Inital search term on page load
-         this.videoSearch('javascript');
+         this.videoSearch(
+           'javascript'
+         );
+
      }
      //Video search method
      videoSearch(term){
@@ -35,6 +38,7 @@ class App extends Component {
              });
          });
      }
+
      //Renders components to the page
      render(){
          //Slows down/throttles user searches (makes results return smoother) - Creates a new debounched version of the search function that can be called only once every 300 milliseconds
@@ -50,7 +54,6 @@ class App extends Component {
                </div>
                <div>
                  <VideoList
-                   onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos} sideList={false}/>
                </div>
              </div>
