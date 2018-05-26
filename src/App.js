@@ -22,9 +22,12 @@ class App extends Component {
              selectedVideo: null
          };
          //Inital search term on page load
-         this.videoSearch(
-           'javascript'
-         );
+         var searchTerms = ['cat', 'moutains'];
+         searchTerms.forEach((term) => {
+           this.videoSearch(
+             term
+           );
+         });
 
      }
      //Video search method
