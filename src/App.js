@@ -18,26 +18,33 @@ class App extends Component {
          super(props)
          //Sets inital state - an object containing an empty Array and selected video to nothing
          this.state = {
-             videos: [],
+             videos1: [],
+             videos2: [],
+             videos3: [],
              selectedVideo: null
          };
-         //Inital search term on page load
-         var searchTerms = ['cat', 'moutains'];
-         searchTerms.forEach((term) => {
-           this.videoSearch(
-             term
-           );
-         });
 
+         //Inital search terms on page load
+         this.videoSearch({search1: 'javascript', search2: 'cars', search3:'camping'});
      }
-     //Video search method
-     videoSearch(term){
-         //Searches Youtube for a list of videos - takes in  the API key and search term and saves a list of videos to (videos)
-         YTSearch({key: API_KEY, term: term}, (videos) => {
-             //Updates component state with search results and rerenders the page - "selectedVideo: videos[0]" makes the first video in the search the main video
+
+     //Executes YouTube Searches
+     videoSearch(terms){
+         //Searches for YouTube Videos
+         YTSearch({key: API_KEY, term: terms.search1}, (videos) => {
              this.setState({
-                 videos: videos,
+                 videos1: videos,
                  selectedVideo: videos[0]
+             });
+         });
+         YTSearch({key: API_KEY, term: terms.search2}, (videos) => {
+             this.setState({
+                 videos2: videos
+             });
+         });
+         YTSearch({key: API_KEY, term: terms.search3}, (videos) => {
+             this.setState({
+                 videos3: videos
              });
          });
      }
@@ -53,11 +60,15 @@ class App extends Component {
                   <VideoDetail video={this.state.selectedVideo}/>
                   <VideoList
                     onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-                    videos={this.state.videos} sideList={true}/>
+                    videos={this.state.videos1} sideList={true}/>
                </div>
                <div>
                  <VideoList
-                   videos={this.state.videos} sideList={false}/>
+                   videos={this.state.videos2} sideList={false}/>
+               </div>
+               <div>
+                 <VideoList
+                   videos={this.state.videos3} sideList={false}/>
                </div>
              </div>
          );
