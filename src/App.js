@@ -64,10 +64,12 @@ class App extends Component {
                </div>
                <div>
                  <VideoList
+                 onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos2} sideList={false}/>
                </div>
                <div>
                  <VideoList
+                 onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos3} sideList={false}/>
                </div>
              </div>

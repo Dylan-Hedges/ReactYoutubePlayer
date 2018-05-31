@@ -19,7 +19,7 @@ const VideoListItem = ({video, onVideoSelect, sideList}) => {
                 {video.snippet.title}
             </li>
           :
-            <li onClick={()=> window.open(url, "_blank")} className={classes.listVideoStyle}>
+            <li onClick={() => onVideoSelect(video)} className={classes.listVideoStyle}>
                 <img src={imageUrl}/>
             </li>
         }
