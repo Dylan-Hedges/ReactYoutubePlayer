@@ -97,63 +97,65 @@ class App extends Component {
          //Returns content to screen
          return(
            <div className="container">
-              <SearchBar onSearchTermChange={videoSearch}/>
-              <div className = {classes.mainAndSideList}>
+              <div className="col-md-6">
+                <SearchBar onSearchTermChange={videoSearch}/>
+              </div>
+              <div className = {`col-md-12 ${classes.mainAndSideList}`}>
                   <VideoDetail video={this.state.selectedVideo}/>
                   <VideoList
                     onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                     videos={this.state.videos1} sideList={true}/>
               </div>
               <div>
-                  <h3>Schmoyoho</h3>
+                  <h3 className="col-md-12">Schmoyoho</h3>
                     <VideoList
                       onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                       videos={this.state.videos2} sideList={false}/>
               </div>
               <div>
-                  <h3>College Humor</h3>
+                  <h3 className="col-md-12">College Humor</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos3} sideList={false}/>
               </div>
               <div>
-                  <h3>Phillip De Franco</h3>
+                  <h3 className="col-md-12">Phillip De Franco</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos4} sideList={false}/>
               </div>
               <div>
-                  <h3>Fred</h3>
+                  <h3 className="col-md-12">Fred</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos5} sideList={false}/>
               </div>
               <div>
-                  <h3>Ray William Johnson</h3>
+                  <h3 className="col-md-12">Ray William Johnson</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos6} sideList={false}/>
               </div>
               <div>
-                  <h3>Epic Meal Time</h3>
+                  <h3 className="col-md-12">Epic Meal Time</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos7} sideList={false}/>
               </div>
               <div>
-                  <h3>FPSRussia</h3>
+                  <h3 className="col-md-12">FPSRussia</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos8} sideList={false}/>
               </div>
               <div>
-                  <h3>Gangnam Style</h3>
+                  <h3 className="col-md-12">Gangnam Style</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos9} sideList={false}/>
               </div>
               <div>
-                  <h3>FPSRussia</h3>
+                  <h3 className="col-md-12">FPSRussia</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos10} sideList={false}/>

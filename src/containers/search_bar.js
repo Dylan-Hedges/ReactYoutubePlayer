@@ -20,7 +20,7 @@ class SearchBar extends Component {
           <div>
             <div className={classes.searchbar}>
                 <input
-                  className="form-control col-md-6"
+                  className="form-control"
                   value={this.state.term}
                   //When the user types, the "onInputChange" callback is executed and passed the new terms
                   onChange = {event => this.onInputChange(event.target.value)}
