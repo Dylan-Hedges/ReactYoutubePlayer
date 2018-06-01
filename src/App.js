@@ -106,9 +106,9 @@ class App extends Component {
               </div>
               <div>
                   <h3>Schmoyoho</h3>
-                  <VideoList
-                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-                    videos={this.state.videos2} sideList={false}/>
+                    <VideoList
+                      onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+                      videos={this.state.videos2} sideList={false}/>
               </div>
               <div>
                   <h3>College Humor</h3>

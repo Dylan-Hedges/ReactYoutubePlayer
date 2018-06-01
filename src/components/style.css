@@ -1,3 +1,14 @@
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding: 0;
+  margin: 0;
+}
+
+
 /*------STYLING FOR MAIN VIDEO--------------*/
 .videoitem img {
   max-width: 64px;

@@ -26,7 +26,7 @@ const VideoList = (props) => {
           </Aux>
         );
     });
-
+    console.log(classes.listVideoStyle);
     //Returns a <ul> with each video being a seperate <li>
     return (
       <Aux>
@@ -35,7 +35,7 @@ const VideoList = (props) => {
               {videoItems}
             </ul>
           :
-            <ul className={classes.listStyle}>
+            <ul className={classes.listStyle} className={classes.listVideoStyle}>
               {videoItems}
             </ul>
         }
