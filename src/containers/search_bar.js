@@ -17,7 +17,7 @@ class SearchBar extends Component {
     }
     render(){
         return (
-          <div>
+          <div className="col-md-9">
             <div className={classes.searchbar}>
                 <input
                   className="form-control"

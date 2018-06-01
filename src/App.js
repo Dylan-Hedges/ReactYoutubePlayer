@@ -97,64 +97,69 @@ class App extends Component {
          //Returns content to screen
          return(
            <div className="container">
-              <div className="col-md-6">
+              <div className="row">
+                <a className="col-md-3" href="https://www.youtube.com/" target="_blank">
+                  <img src={require("./images/developed-with-youtube-sentence-case-dark(200x100).png")} alt="Youtube Logo" />
+                </a>
                 <SearchBar onSearchTermChange={videoSearch}/>
               </div>
-              <div className = {`col-md-12 ${classes.mainAndSideList}`}>
-                  <VideoDetail video={this.state.selectedVideo}/>
-                  <VideoList
-                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-                    videos={this.state.videos1} sideList={true}/>
+              <div className="row">
+                <div className = {`col-md-12 ${classes.mainAndSideList}`}>
+                    <VideoDetail video={this.state.selectedVideo}/>)
+                    <VideoList
+                      onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+                      videos={this.state.videos1} sideList={true}/>
+                </div>
               </div>
-              <div>
+              <div className="row">
                   <h3 className="col-md-12">Schmoyoho</h3>
                     <VideoList
                       onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                       videos={this.state.videos2} sideList={false}/>
               </div>
-              <div>
+              <div className="row">
                   <h3 className="col-md-12">College Humor</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos3} sideList={false}/>
               </div>
-              <div>
+              <div className="row">
                   <h3 className="col-md-12">Phillip De Franco</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos4} sideList={false}/>
               </div>
-              <div>
+              <div className="row">
                   <h3 className="col-md-12">Fred</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos5} sideList={false}/>
               </div>
-              <div>
+              <div className="row">
                   <h3 className="col-md-12">Ray William Johnson</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos6} sideList={false}/>
               </div>
-              <div>
+              <div className="row">
                   <h3 className="col-md-12">Epic Meal Time</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos7} sideList={false}/>
               </div>
-              <div>
+              <div className="row">
                   <h3 className="col-md-12">FPSRussia</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos8} sideList={false}/>
               </div>
-              <div>
+              <div className="row">
                   <h3 className="col-md-12">Gangnam Style</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos9} sideList={false}/>
               </div>
-              <div>
+              <div className="row">
                   <h3 className="col-md-12">FPSRussia</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}

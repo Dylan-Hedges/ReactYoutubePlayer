@@ -10,6 +10,7 @@ li {
 
 
 /*------STYLING FOR MAIN VIDEO--------------*/
+
 .videoitem img {
   max-width: 64px;
 }
@@ -46,6 +47,7 @@ li {
 }
 
 /* ------STYLING FOR LIST OF VIDEOS--------------*/
+
 .listStyle {
   list-style-type: none;
   padding: 0;
