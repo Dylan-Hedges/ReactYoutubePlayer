@@ -1,3 +1,4 @@
+/*-----------GENREAL STYLING*/
 ul {
   padding: 0;
   margin: 0;
@@ -7,6 +8,16 @@ li {
   padding: 0;
   margin: 0;
 }
+
+.col {
+  padding-right: 0px !important;
+  padding-left: 5px !important;
+}
+
+.col:first-child {
+  padding-left: 15px !important;
+}
+
 
 
 /*------STYLING FOR MAIN VIDEO--------------*/
@@ -29,6 +40,10 @@ li {
   font-weight:bold;
 }
 /*------STYLING FOR SIDE VIDEOS--------------*/
+.sideThumbnailStyle{
+  width: 200px;
+  height: auto;
+}
 .sideListStyle {
   list-style-type: none;
   padding: 0;
@@ -63,4 +78,9 @@ li {
 
 .listVideoStyle: hover {
   background-color: green;
+}
+
+.thumbnailStyle {
+  width: 218px;
+  height: auto;
 }

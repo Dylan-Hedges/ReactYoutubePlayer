@@ -5,7 +5,7 @@ import Aux from '../hoc/Aux_file.js';
 //Renders individual reccomended videos
 const VideoListItem = ({video, onVideoSelect, sideList}) => {
     //Saves image thumbail URL
-    const imageUrl = video.snippet.thumbnails.default.url;
+    const imageUrl = video.snippet.thumbnails.high.url;
     //Captures the main videos id
     const videoId = video.id.videoId;
     //URL - Embeds youtube video player and appends video id
@@ -15,12 +15,12 @@ const VideoListItem = ({video, onVideoSelect, sideList}) => {
       <Aux>
         { (sideList === true) ?
             <li onClick={() => onVideoSelect(video)} className={classes.sideListVideoStyle}>
-                <img src={imageUrl}/>
+                <img src={imageUrl} className={classes.sideThumbnailStyle}/>
                 {video.snippet.title}
             </li>
           :
-            <li onClick={() => onVideoSelect(video)}  className={`col-md-2 ${classes.listVideoStyle}`}>
-                <img src={imageUrl}/>
+            <li onClick={() => onVideoSelect(video)}  className={`col-md-2 ${classes.col} ${classes.listVideoStyle}`}>
+                <img src={imageUrl} className={classes.thumbnailStyle}/>
             </li>
         }
       </Aux>

@@ -44,6 +44,7 @@ class App extends Component {
              });
          });
          YTSearch({key: API_KEY, term: terms.search2}, (videos) => {
+              console.log(videos);
              this.setState({
                  videos2: videos
              });
@@ -160,7 +161,7 @@ class App extends Component {
                    videos={this.state.videos9} sideList={false}/>
               </div>
               <div className="row">
-                  <h3 className="col-md-12">FPSRussia</h3>
+                  <h3 className="col-md-12">Machinima</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos10} sideList={false}/>
