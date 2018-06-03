@@ -1,4 +1,9 @@
-.mainAndSideList{
+/* .mainAndSideList{
   display:flex;
   flex-direction:row;
+} */
+
+.colmd9 {
+  padding-right: 0px;
+  padding-left: 0px;
 }

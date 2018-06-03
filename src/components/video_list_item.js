@@ -14,12 +14,14 @@ const VideoListItem = ({video, onVideoSelect, sideList}) => {
     return (
       <Aux>
         { (sideList === true) ?
-            <li onClick={() => onVideoSelect(video)} className={classes.sideListVideoStyle}>
-                <img src={imageUrl} className={classes.sideThumbnailStyle}/>
-                {video.snippet.title}
+            <li onClick={() => onVideoSelect(video)}>
+               <div className={classes.sideVideoTitle}>
+                  <img src={imageUrl} className={classes.sideThumbnailStyle}/>
+                  {video.snippet.title}
+              </div>
             </li>
           :
-            <li onClick={() => onVideoSelect(video)}  className={`col-md-2 ${classes.col} ${classes.listVideoStyle}`}>
+            <li onClick={() => onVideoSelect(video)}  className={`col-sm-2 ${classes.colmd2} ${classes.listVideoStyle}`}>
                 <img src={imageUrl} className={classes.thumbnailStyle}/>
             </li>
         }

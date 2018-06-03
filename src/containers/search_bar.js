@@ -17,15 +17,13 @@ class SearchBar extends Component {
     }
     render(){
         return (
-          <div className="col-md-9">
-            <div className={classes.searchbar}>
-                <input
-                  className="form-control"
-                  value={this.state.term}
-                  //When the user types, the "onInputChange" callback is executed and passed the new terms
-                  onChange = {event => this.onInputChange(event.target.value)}
-                />
-            </div>
+          <div className={classes.searchbar}>
+              <input
+                className="form-control"
+                value={this.state.term}
+                //When the user types, the "onInputChange" callback is executed and passed the new terms
+                onChange = {event => this.onInputChange(event.target.value)}
+              />
           </div>
         );
     }
