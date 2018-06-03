@@ -107,65 +107,70 @@ class App extends Component {
                </div>
               </div>
               <div className="row">
-                  <div className={`col-md-8 ${classes.colmd9}`}>
+                  <div className={`col-md-8 ${classes.colNoPadding}`}>
                       <VideoDetail video={this.state.selectedVideo}/>
                   </div>
-                  <div className={`col-md-4 ${classes.colmd9}`}>
+                  <div className={`col-md-4 ${classes.colNoPadding}`}>
                       <VideoList
                         onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                         videos={this.state.videos1} sideList={true}/>
                   </div>
               </div>
               <div className="row">
-                  <h3 className={`col-md-12 ${classes.col}`}>Schmoyoho</h3>
+                <div className={`col-md-12 ${classes.colNoPadding} ${classes.lineStyle}`}>
+                  <hr />
+                </div>
+              </div>
+              <div className="row">
+                  <h3 className={`col-md-12 ${classes.titleStyle}`}>Schmoyoho</h3>
                     <VideoList
                       onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                       videos={this.state.videos2} sideList={false}/>
               </div>
               <div className="row">
-                  <h3 className={`col-md-12 ${classes.col}`}>College Humor</h3>
+                  <h3 className={`col-md-12 ${classes.titleStyle}`}>College Humor</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos3} sideList={false}/>
               </div>
               <div className="row">
-                  <h3 className={`col-md-12 ${classes.col}`}>Phillip De Franco</h3>
+                  <h3 className={`col-md-12 ${classes.titleStyle}`}>Phillip De Franco</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos4} sideList={false}/>
               </div>
               <div className="row">
-                  <h3 className={`col-md-12 ${classes.col}`}>Fred</h3>
+                  <h3 className={`col-md-12 ${classes.titleStyle}`}>Fred</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos5} sideList={false}/>
               </div>
               <div className="row">
-                  <h3 className={`col-md-12 ${classes.col}`}>Ray William Johnson</h3>
+                  <h3 className={`col-md-12 ${classes.titleStyle}`}>Ray William Johnson</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos6} sideList={false}/>
               </div>
               <div className="row">
-                  <h3 className={`col-md-12 ${classes.col}`}>Epic Meal Time</h3>
+                  <h3 className={`col-md-12 ${classes.titleStyle}`}>Epic Meal Time</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos7} sideList={false}/>
               </div>
               <div className="row">
-                  <h3 className={`col-md-12 ${classes.col}`}>FPSRussia</h3>
+                  <h3 className={`col-md-12 ${classes.titleStyle}`}>FPSRussia</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos8} sideList={false}/>
               </div>
               <div className="row">
-                  <h3 className={`col-md-12 ${classes.col}`}>Gangnam Style</h3>
+                  <h3 className={`col-md-12 ${classes.titleStyle}`}>Gangnam Style</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos9} sideList={false}/>
               </div>
               <div className="row">
-                  <h3 className={`col-md-12 ${classes.col}`}>Machinima</h3>
+                  <h3 className={`col-md-12 ${classes.titleStyle}`}>Machinima</h3>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos10} sideList={false}/>

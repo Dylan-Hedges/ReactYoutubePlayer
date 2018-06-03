@@ -3,7 +3,14 @@
   flex-direction:row;
 } */
 
-.colmd9 {
-  padding-right: 0px;
-  padding-left: 0px;
+.colNoPadding {
+  padding: 0;
+}
+.titleStyle {
+  font-weight: bold;
+  padding: 30px 0 10px 0;
+}
+
+.lineStyle {
+  margin-top: 20px;
 }

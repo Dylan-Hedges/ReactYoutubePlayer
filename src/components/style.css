@@ -14,19 +14,10 @@ li {
   padding-left: 5px;
 }
 
-
-
-
-
 /*------STYLING FOR MAIN VIDEO--------------*/
 
 .videoitem img {
   max-width: 64px;
-}
-
-.mainVideoStyle {
-  border: 1px solid #000;
-  border-radius: 4px;
 }
 
 .mainVideoDescription {
@@ -47,8 +38,6 @@ li {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  border: 1px solid red;
-  border-radius: 4px;
 }
 
 .sideVideoTitle {
@@ -65,8 +54,6 @@ li {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  border: 1px solid green;
-  border-radius: 4px;
 }
 
 .listVideoStyle {
