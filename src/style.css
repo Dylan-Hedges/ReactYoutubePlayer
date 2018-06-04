@@ -3,6 +3,14 @@
   flex-direction:row;
 } */
 
+.linkStyle {
+  color: #000;
+}
+
+.linkStyle:hover {
+  text-decoration: none;
+  color: #000;
+}
 .colNoPadding {
   padding: 0;
 }

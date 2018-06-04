@@ -18,16 +18,7 @@ class App extends Component {
          super(props)
          //Sets inital app state
          this.state = {
-             videos1: [],
-             videos2: [],
-             videos3: [],
-             videos4: [],
-             videos5: [],
-             videos6: [],
-             videos7: [],
-             videos8: [],
-             videos9: [],
-             videos10: [],
+             videos1: [], videos2: [], videos3: [], videos4: [], videos5: [], videos6: [], videos7: [], videos8: [], videos9: [], videos10: [],
              selectedVideo: null
          };
          //Inital search terms on page load
@@ -122,56 +113,74 @@ class App extends Component {
                 </div>
               </div>
               <div className="row">
+                <a href="https://www.youtube.com/user/Schmoyoho" target="_blank" className={classes.linkStyle}>
                   <h3 className={`col-md-12 ${classes.titleStyle}`}>Schmoyoho</h3>
-                    <VideoList
-                      onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-                      videos={this.state.videos2} sideList={false}/>
+                </a>
+                <VideoList
+                  onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+                  videos={this.state.videos2} sideList={false}/>
               </div>
               <div className="row">
+                <a href="https://www.youtube.com/user/CollegeHumor" target="_blank" className={classes.linkStyle}>
                   <h3 className={`col-md-12 ${classes.titleStyle}`}>College Humor</h3>
+                </a>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos3} sideList={false}/>
               </div>
               <div className="row">
-                  <h3 className={`col-md-12 ${classes.titleStyle}`}>Phillip De Franco</h3>
+                <a href="https://www.youtube.com/user/sxephil" target="_blank" className={classes.linkStyle}>
+                  <h3 className={`col-md-12 ${classes.titleStyle}`}>Phillip DeFranco</h3>
+                </a>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos4} sideList={false}/>
               </div>
               <div className="row">
+                <a href="https://www.youtube.com/user/Fred" target="_blank" className={classes.linkStyle}>
                   <h3 className={`col-md-12 ${classes.titleStyle}`}>Fred</h3>
+                </a>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos5} sideList={false}/>
               </div>
               <div className="row">
+                <a href="https://www.youtube.com/user/RayWilliamJohnson" target="_blank" className={classes.linkStyle}>
                   <h3 className={`col-md-12 ${classes.titleStyle}`}>Ray William Johnson</h3>
+                </a>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos6} sideList={false}/>
               </div>
               <div className="row">
+                <a href="https://www.youtube.com/user/EpicMealTime" target="_blank" className={classes.linkStyle}>
                   <h3 className={`col-md-12 ${classes.titleStyle}`}>Epic Meal Time</h3>
+                </a>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos7} sideList={false}/>
               </div>
               <div className="row">
+                <a href="https://www.youtube.com/user/FPSRussia" target="_blank" className={classes.linkStyle}>
                   <h3 className={`col-md-12 ${classes.titleStyle}`}>FPSRussia</h3>
+                </a>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos8} sideList={false}/>
               </div>
               <div className="row">
+                <a href="https://www.youtube.com/channel/UCrDkAvwZum-UTjHmzDI2iIw" target="_blank" className={classes.linkStyle}>
                   <h3 className={`col-md-12 ${classes.titleStyle}`}>Gangnam Style</h3>
+                </a>
                   <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos9} sideList={false}/>
               </div>
               <div className="row">
+                <a href="https://www.youtube.com/user/Machinima" target="_blank" className={classes.linkStyle}>
                   <h3 className={`col-md-12 ${classes.titleStyle}`}>Machinima</h3>
-                  <VideoList
+                </a>
+                <VideoList
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos10} sideList={false}/>
               </div>
