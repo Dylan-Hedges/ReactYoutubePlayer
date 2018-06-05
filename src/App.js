@@ -22,11 +22,21 @@ class App extends Component {
              selectedVideo: null
          };
          //Inital search terms on page load
-         this.videoSearch({search1: 'javascript', search2: 'schmoyoho', search3:'college humor originals', search4: 'phillip de franco', search5: 'fred', search6: 'ray william johnson', search7: 'epic meal time', search8: 'fps russia', search9: 'gangnam style', search10: 'machinima'});
+         this.initalSearch({search1: 'javascript', search2: 'schmoyoho', search3:'college humor originals', search4: 'phillip de franco', search5: 'fred', search6: 'ray william johnson', search7: 'epic meal time', search8: 'fps russia', search9: 'gangnam style', search10: 'machinima'});
      }
 
+     videoSearch(term){
+         //Makes request to YouTube API
+         YTSearch({key: API_KEY, term: term}, (videos) => {
+             this.setState({
+                 videos1: videos,
+                 selectedVideo: videos[0]
+             });
+         });
+    }
+
      //Function that executes YouTube Searches
-     videoSearch(terms){
+     initalSearch(terms){
          //Makes request to YouTube API
          YTSearch({key: API_KEY, term: terms.search1}, (videos) => {
              this.setState({
