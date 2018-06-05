@@ -15,7 +15,6 @@ li {
 }
 
 /*------STYLING FOR MAIN VIDEO--------------*/
-
 .videoitem img {
   max-width: 64px;
 }
@@ -33,15 +32,18 @@ li {
   cursor: pointer;
   width: 130px;
   height: auto;
-}
-.sideListStyle {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+  padding-right: 5px;
 }
 
 .sideVideoTitle {
   font-weight: bold;
+  display: inline;
+}
+
+.sideListStyle {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .sideListVideoStyle: hover {
@@ -49,7 +51,6 @@ li {
 }
 
 /* ------STYLING FOR LIST OF VIDEOS--------------*/
-
 .listStyle {
   list-style-type: none;
   padding: 0;

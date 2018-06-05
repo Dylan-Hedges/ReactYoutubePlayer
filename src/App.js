@@ -100,15 +100,17 @@ class App extends Component {
          return(
            <div className="container">
               <div className="row">
-                <a className="col-md-3" href="https://www.youtube.com/" target="_blank">
-                  <img src={require("./images/developed-with-youtube-sentence-case-dark(200x100).png")} alt="Youtube Logo" />
-                </a>
-               <div className="col-md-9">
-                <SearchBar onSearchTermChange={videoSearch}/>
-               </div>
+                <div className={`col-md-3`}>
+                  <a href="https://www.youtube.com/" target="_blank">
+                    <img src={require("./images/developed-with-youtube-sentence-case-dark(200x100).png")} alt="Youtube Logo" />
+                  </a>
+                </div>
+                <div className={`col-md-9 ${classes.colNoPadding}`}>
+                    <SearchBar onSearchTermChange={videoSearch}/>
+                 </div>
               </div>
               <div className="row">
-                  <div className={`col-md-8 ${classes.colNoPadding}`}>
+                  <div className="col-md-8">
                       <VideoDetail video={this.state.selectedVideo}/>
                   </div>
                   <div className={`col-md-4 ${classes.colNoPadding}`}>

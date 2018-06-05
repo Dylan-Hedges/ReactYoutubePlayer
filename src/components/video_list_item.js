@@ -15,9 +15,9 @@ const VideoListItem = ({video, onVideoSelect, sideList}) => {
       <Aux>
         { (sideList === true) ?
             <li onClick={() => onVideoSelect(video)}>
-               <div className={classes.sideVideoTitle}>
+               <div>
                   <img src={imageUrl} className={classes.sideThumbnailStyle}/>
-                  {video.snippet.title}
+                  <p className={classes.sideVideoTitle}>{video.snippet.title}</p>
               </div>
             </li>
           :
