@@ -46,7 +46,7 @@ li {
   margin: 0;
 }
 
-.sideListVideoStyle: hover {
+.sideListVideoStyle:hover {
   background-color: green;
 }
 
@@ -62,7 +62,7 @@ li {
   display: inline;
 }
 
-.listVideoStyle: hover {
+.listVideoStyle:hover {
   background-color: green;
 }
 
