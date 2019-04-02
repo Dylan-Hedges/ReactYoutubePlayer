@@ -5,12 +5,14 @@ import YTSearch from 'youtube-api-search';
 import SearchBar from './containers/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
-import keys from './keys/keys';
+import keys from './keys/keys.js';
 import classes from './style.css';
 import Aux from './hoc/Aux_file.js';
 
+require('dotenv').config();
+
 //Youtube API key
-const API_KEY = `${keys.youtubeKey}`;
+const API_KEY = `${keys.REACT_APP_YOUTUBEKEY}`;
 
 //Root component
 class App extends Component {
