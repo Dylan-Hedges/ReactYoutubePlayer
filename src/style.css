@@ -22,3 +22,9 @@
 .lineStyle {
   margin-top: 35px;
 }
+
+.footerlink{
+  padding: 20px  0 20px 0;
+  font-size: 1rem;
+  text-align: center;
+}

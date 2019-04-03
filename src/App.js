@@ -198,6 +198,13 @@ class App extends Component {
                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
                    videos={this.state.videos10} sideList={false}/>
               </div>
+              <div className="row">
+                <div className="col-lg-12">
+                  <div className={classes.footerlink}>
+                    Designed and Developed by Dylan Hedges (visit <a href="http://dylanhedges.com" target="_blank">dylanhedges.com</a>)
+                  </div>
+                </div>
+              </div>
             </div>
          );
      }
