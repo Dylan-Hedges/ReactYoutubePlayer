@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './style.css';
 import Aux from '../hoc/Aux_file.js';
+import { Link, animateScroll as scroll } from "react-scroll";
 
 //Renders individual reccomended videos
 const VideoListItem = ({video, onVideoSelect, sideList}) => {
@@ -18,11 +19,13 @@ const VideoListItem = ({video, onVideoSelect, sideList}) => {
                <div>
                   <img src={imageUrl} className={classes.sideThumbnailStyle}/>
                   <p className={classes.sideVideoTitle}>{video.snippet.title}</p>
+                  {scroll.scrollToTop()}
               </div>
             </li>
           :
             <li onClick={() => onVideoSelect(video)}  className={`col-sm-2 ${classes.colmd2} ${classes.listVideoStyle}`}>
                 <img src={imageUrl} className={classes.thumbnailStyle}/>
+                {scroll.scrollToTop()}
             </li>
         }
       </Aux>
