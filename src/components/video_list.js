@@ -26,7 +26,6 @@ const VideoList = (props) => {
           </Aux>
         );
     });
-    console.log(classes.listVideoStyle);
     //Returns a <ul> with each video being a seperate <li>
     return (
       <Aux>

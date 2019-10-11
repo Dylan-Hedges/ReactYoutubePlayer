@@ -8,7 +8,7 @@ import VideoDetail from './components/video_detail';
 import keys from './keys/keys.js';
 import classes from './style.css';
 import Aux from './hoc/Aux_file.js';
-
+import searchData from './searchData.js';
 require('dotenv').config();
 
 //Youtube API key
@@ -17,16 +17,18 @@ const API_KEY = `${keys.REACT_APP_YOUTUBEKEY}`;
 //Root component
 class App extends Component {
      constructor(props){
-         super(props)
-         //Sets inital app state
+         super(props);
+         // Sets inital app state
          this.state = {
-             videos1: [], videos2: [], videos3: [], videos4: [], videos5: [], videos6: [], videos7: [], videos8: [], videos9: [], videos10: [],
-             selectedVideo: null
+             firstVideo:[],
+             selectedVideo: null,
+             searchData: searchData
          };
-         //Inital search terms on page load
-         this.initalSearch({search1: 'javascript', search2: 'schmoyoho', search3:'college humor originals', search4: 'phillip de franco', search5: 'fred', search6: 'ray william johnson', search7: 'epic meal time', search8: 'fps russia', search9: 'gangnam style', search10: 'machinima'});
+         //Binds the renderVideos method to the component
+         this.renderVideos = this.renderVideos.bind(this);
      }
 
+     //User updates first video with search term
      videoSearch(term){
          //Makes request to YouTube API
          YTSearch({key: API_KEY, term: term}, (videos) => {
@@ -37,62 +39,43 @@ class App extends Component {
          });
     }
 
-     //Function that executes YouTube Searches
-     initalSearch(terms){
-         //Makes request to YouTube API
-         YTSearch({key: API_KEY, term: terms.search1}, (videos) => {
-             this.setState({
-                 videos1: videos,
-                 selectedVideo: videos[0]
-             });
-         });
-         YTSearch({key: API_KEY, term: terms.search2}, (videos) => {
-              console.log(videos);
-             this.setState({
-                 videos2: videos
-             });
-         });
-         YTSearch({key: API_KEY, term: terms.search3}, (videos) => {
-             this.setState({
-                 videos3: videos
-             });
-         });
-         YTSearch({key: API_KEY, term: terms.search4}, (videos) => {
-             this.setState({
-                 videos4: videos
-             });
-         });
-         YTSearch({key: API_KEY, term: terms.search5}, (videos) => {
-             this.setState({
-                 videos5: videos
-             });
-         });
-         YTSearch({key: API_KEY, term: terms.search6}, (videos) => {
-             this.setState({
-                 videos6: videos
-             });
-         });
-         YTSearch({key: API_KEY, term: terms.search7}, (videos) => {
-             this.setState({
-                 videos7: videos
-             });
-         });
-         YTSearch({key: API_KEY, term: terms.search8}, (videos) => {
-             this.setState({
-                 videos8: videos
-             });
-         });
-         YTSearch({key: API_KEY, term: terms.search9}, (videos) => {
-             this.setState({
-                 videos9: videos
-             });
-         });
-         YTSearch({key: API_KEY, term: terms.search10}, (videos) => {
-             this.setState({
-                 videos10: videos
-             });
-         });
-     }
+    //Used to make on page load Youtube search - Lifecycle method execute on initial component mounting
+    componentDidMount(){
+      //Creates a copy of the searchData state
+      const copyState = this.state.searchData;
+      //Maps over and executes a Youtube search for each element of copyState, returns a new version of copyState but with Youtube videos under searchResult  - automatically returns a new array with the same variable name due to using .map
+      copyState.map((item, index) => {
+        //Executes a Youtube search for each element - uses the search team inside searchData.search
+         YTSearch({key: API_KEY, term: item.search}, (data) => {
+          //Saves the returned array of videos from Youtube in the empty searchResult array
+          item.searchResult = data;
+        });
+      });
+      //Updates the searchData state with the new state that includes Youtube videos
+      this.setState({
+        searchData: copyState
+      });
+      //Executes a Youtube search for the first video
+      YTSearch({key: API_KEY, term: "javascript"}, (firstVideo) => {
+          this.setState({
+              firstVideo: firstVideo,
+              selectedVideo: firstVideo[0]
+          });
+      });
+    }
+
+    //Renders all videos on page load
+    renderVideos(){
+       return this.state.searchData.map(vid => {
+        return(
+          <div key={vid.search} className="row">
+            <a href={vid.url} target="_blank" className={classes.linkStyle}>
+              <h3 className={`col-md-12 ${classes.titleStyle}`}>{vid.title}</h3>
+            </a>
+            <VideoList onVideoSelect={selectedVideo => this.setState({selectedVideo})} videos={vid.searchResult} sideList={false}/>
+        </div>);
+      })
+    }
 
      //Renders components to the page
      render(){
@@ -116,9 +99,7 @@ class App extends Component {
                       <VideoDetail video={this.state.selectedVideo}/>
                   </div>
                   <div className={`col-md-4 ${classes.colNoPadding}`}>
-                      <VideoList
-                        onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-                        videos={this.state.videos1} sideList={true}/>
+                    <VideoList onVideoSelect={selectedVideo => this.setState({selectedVideo})} videos={this.state.firstVideo} sideList={true}/>
                   </div>
               </div>
               <div className="row">
@@ -126,84 +107,8 @@ class App extends Component {
                   <hr />
                 </div>
               </div>
-              <div className="row">
-                <a href="https://www.youtube.com/user/Schmoyoho" target="_blank" className={classes.linkStyle}>
-                  <h3 className={`col-md-12 ${classes.titleStyle}`}>Schmoyoho</h3>
-                </a>
-                <VideoList
-                  onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-                  videos={this.state.videos2} sideList={false}/>
-              </div>
-              <div className="row">
-                <a href="https://www.youtube.com/user/CollegeHumor" target="_blank" className={classes.linkStyle}>
-                  <h3 className={`col-md-12 ${classes.titleStyle}`}>College Humor</h3>
-                </a>
-                  <VideoList
-                   onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-                   videos={this.state.videos3} sideList={false}/>
-              </div>
-              <div className="row">
-                <a href="https://www.youtube.com/user/sxephil" target="_blank" className={classes.linkStyle}>
-                  <h3 className={`col-md-12 ${classes.titleStyle}`}>Phillip DeFranco</h3>
-                </a>
-                  <VideoList
-                   onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-                   videos={this.state.videos4} sideList={false}/>
-              </div>
-              <div className="row">
-                <a href="https://www.youtube.com/user/Fred" target="_blank" className={classes.linkStyle}>
-                  <h3 className={`col-md-12 ${classes.titleStyle}`}>Fred</h3>
-                </a>
-                  <VideoList
-                   onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-                   videos={this.state.videos5} sideList={false}/>
-              </div>
-              <div className="row">
-                <a href="https://www.youtube.com/user/RayWilliamJohnson" target="_blank" className={classes.linkStyle}>
-                  <h3 className={`col-md-12 ${classes.titleStyle}`}>Ray William Johnson</h3>
-                </a>
-                  <VideoList
-                   onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-                   videos={this.state.videos6} sideList={false}/>
-              </div>
-              <div className="row">
-                <a href="https://www.youtube.com/user/EpicMealTime" target="_blank" className={classes.linkStyle}>
-                  <h3 className={`col-md-12 ${classes.titleStyle}`}>Epic Meal Time</h3>
-                </a>
-                  <VideoList
-                   onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-                   videos={this.state.videos7} sideList={false}/>
-              </div>
-              <div className="row">
-                <a href="https://www.youtube.com/user/FPSRussia" target="_blank" className={classes.linkStyle}>
-                  <h3 className={`col-md-12 ${classes.titleStyle}`}>FPSRussia</h3>
-                </a>
-                  <VideoList
-                   onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-                   videos={this.state.videos8} sideList={false}/>
-              </div>
-              <div className="row">
-                <a href="https://www.youtube.com/channel/UCrDkAvwZum-UTjHmzDI2iIw" target="_blank" className={classes.linkStyle}>
-                  <h3 className={`col-md-12 ${classes.titleStyle}`}>Gangnam Style</h3>
-                </a>
-                  <VideoList
-                   onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-                   videos={this.state.videos9} sideList={false}/>
-              </div>
-              <div className="row">
-                <a href="https://www.youtube.com/user/Machinima" target="_blank" className={classes.linkStyle}>
-                  <h3 className={`col-md-12 ${classes.titleStyle}`}>Machinima</h3>
-                </a>
-                <VideoList
-                   onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-                   videos={this.state.videos10} sideList={false}/>
-              </div>
-              <div className="row">
-                <div className="col-lg-12">
-                  <div className={classes.footerlink}>
-                    Designed and Developed by Dylan Hedges (visit <a href="http://dylanhedges.com" target="_blank">dylanhedges.com</a>)
-                  </div>
-                </div>
+              <div>
+                {this.renderVideos()}
               </div>
             </div>
          );
